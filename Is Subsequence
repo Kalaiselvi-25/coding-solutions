@@ -14,26 +14,15 @@ Output: true
 */
 class Solution {
     public boolean isSubsequence(String s, String t) {
-        char[] s1=s.toCharArray();
-        char[] t1=t.toCharArray();
-        boolean[] arr=new boolean[s1.length];
-        int index=0;
-        int j=0;
-        for (int i=0;i<s1.length;i++)
-        {
-            boolean found=false;
-            while (j<t1.length){
-                if (s1[i]==t1[j])
-                {
-                    found=true;
-                    arr[index++]=true;
-                    j++;
-                    break;
-                }
-                else j++;
+
+        int i = 0; 
+        int j = 0; 
+        while (i < s.length() && j < t.length()) {
+            if (s.charAt(i) == t.charAt(j)) {
+                i++;
             }
-            if (!found) return false;
+            j++;
         }
-        return true;
+        return i == s.length();
     }
 }
