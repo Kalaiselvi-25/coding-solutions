@@ -1,0 +1,36 @@
+/*
+Problem: Valid Anagram
+Description:
+Given two strings s and t, return true if t is an anagram of s,otherwise return false.
+An anagram is a word formed by rearranging the letters of another word.
+
+Example 1:
+Input: s = "racecar", t = "carrace"
+Output: true
+
+Example 2:
+Input: s = "jar", t = "jam"
+Output: false
+*/
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if (s.length()!=t.length())
+        {
+            return false;
+        }
+        char[] arr1=s.toCharArray();
+        char[] arr2=t.toCharArray();
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        if (Arrays.equals(arr1,arr2))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+}
